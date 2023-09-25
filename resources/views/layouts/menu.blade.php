@@ -97,6 +97,19 @@
             </ul>
         @endcan
 
+        @can('repair-type-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('repairType.index') }}"
+                       class="nav-link {{  request()->is('settings/repairType*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Repair Type </p>
+                    </a>
+                </li>
+            </ul>
+        @endcan
+
         @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">

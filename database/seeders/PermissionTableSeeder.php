@@ -29,6 +29,7 @@ class PermissionTableSeeder extends Seeder
             'unit-management',
             'workshop-type-management',
             'job-type-management',
+            'repair-type-management',
             'sleme-battalion-management',
         ];
 

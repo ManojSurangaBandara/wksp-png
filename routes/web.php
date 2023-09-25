@@ -3,6 +3,7 @@
 use App\Http\Controllers\ajaxController;
 use App\Http\Controllers\JobTypeController;
 use App\Http\Controllers\RegimentController;
+use App\Http\Controllers\RepairTypeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SlemeBattalionController;
 use App\Http\Controllers\UnitController;
@@ -40,6 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('unit', UnitController::class);
         Route::resource('workshopType', WorkshopTypeController::class);
         Route::resource('jobType', JobTypeController::class);
+        Route::resource('repairType', RepairTypeController::class);
         Route::resource('slemeBattalion', SlemeBattalionController::class);
     });
 
