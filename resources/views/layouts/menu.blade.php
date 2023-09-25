@@ -58,6 +58,19 @@
             <p>Master Data Module</p>
         </a>
 
+        @can('workshop-type-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('workshopType.index') }}"
+                       class="nav-link {{  request()->is('settings/workshopType*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Workshop Type </p>
+                    </a>
+                </li>
+            </ul>
+        @endcan
+
         @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">

@@ -27,6 +27,7 @@ class PermissionTableSeeder extends Seeder
             'reports-management',
             'regiment-management',
             'unit-management',
+            'workshop-type-management',
         ];
 
         foreach ($permissions as $permission) {

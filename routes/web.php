@@ -5,6 +5,7 @@ use App\Http\Controllers\RegimentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkshopTypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::prefix('settings')->group(function () {
         Route::resource('regiment', RegimentController::class);
         Route::resource('unit', UnitController::class);
+        Route::resource('workshopType', WorkshopTypeController::class);
     });
 
     Route::get('/ajax/getUnit', [ajaxController::class, 'getUnit'])->name('ajax.getUnit');
