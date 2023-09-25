@@ -3,6 +3,7 @@
 use App\Http\Controllers\ajaxController;
 use App\Http\Controllers\RegimentController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SlemeBattalionController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkshopTypeController;
@@ -37,6 +38,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('regiment', RegimentController::class);
         Route::resource('unit', UnitController::class);
         Route::resource('workshopType', WorkshopTypeController::class);
+        Route::resource('slemeBattalion', SlemeBattalionController::class);
     });
 
     Route::get('/ajax/getUnit', [ajaxController::class, 'getUnit'])->name('ajax.getUnit');

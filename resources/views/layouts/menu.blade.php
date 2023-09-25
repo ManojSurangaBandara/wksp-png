@@ -71,6 +71,19 @@
             </ul>
         @endcan
 
+        @can('sleme-battalion-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('slemeBattalion.index') }}"
+                       class="nav-link {{  request()->is('settings/slemeBattalion*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>SLEME Battalion </p>
+                    </a>
+                </li>
+            </ul>
+        @endcan
+
         @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">

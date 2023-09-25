@@ -28,6 +28,7 @@ class PermissionTableSeeder extends Seeder
             'regiment-management',
             'unit-management',
             'workshop-type-management',
+            'sleme-battalion-management',
         ];
 
         foreach ($permissions as $permission) {
