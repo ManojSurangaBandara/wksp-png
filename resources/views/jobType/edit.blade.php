@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Edit Workshop Type </h1>
+                        <h1>Edit Job Type </h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item ">Workshop Type</li>
+                            <li class="breadcrumb-item ">Job Type</li>
                             <li class="breadcrumb-item active">edit</li>
                         </ol>
                     </div>
@@ -24,14 +24,14 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Edit Workshop Type</div>
+                    <div class="card-title">Edit Job Type</div>
                     <div class="card-tools">
                         <a href="{{ URL::previous() }}" class="btn btn-sm btn-dark">Back</a>
                     </div>
                 </div>
 
 
-                <form role="form" method="POST" action="{{ route('workshopType.update',$workshopType->id) }}"
+                <form role="form" method="POST" action="{{ route('jobType.update',$jobType->id) }}"
                       enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -42,7 +42,7 @@
                             <div class="col-sm-9">
                                 <input type="text" name="name"
                                        class="form-control   @error('name') is-invalid @enderror" id="name"
-                                       placeholder="Name" value="{{$workshopType->name }}">
+                                       placeholder="Name" value="{{$jobType->name }}">
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

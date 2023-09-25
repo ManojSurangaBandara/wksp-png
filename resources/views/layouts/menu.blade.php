@@ -84,6 +84,19 @@
             </ul>
         @endcan
 
+        @can('job-type-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('jobType.index') }}"
+                       class="nav-link {{  request()->is('settings/jobType*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Job Type </p>
+                    </a>
+                </li>
+            </ul>
+        @endcan
+
         @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
