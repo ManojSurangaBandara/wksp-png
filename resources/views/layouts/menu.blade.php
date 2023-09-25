@@ -52,6 +52,37 @@
         </ul>
     </li>
 
+    @can('workshop-management')
+        <li class="nav-item    has-treeview  {{ request()->is('workshop*')  ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link  ">
+                <i class="nav-icon text-blue fas fa fa-warehouse"></i>
+                <p>Workshop Management Module</p>
+            </a>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('workshop.create') }}"
+                       class="nav-link {{  request()->is('workshop/create') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-blue"></i>
+                        <p>Add Workshop </p>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('workshop.index') }}"
+                       class="nav-link {{  request()->is('workshop') ? 'active' : '' }}  ">
+                        <i class="far fa-circle nav-icon text-blue"></i>
+                        <p>Workshops </p>
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+    @endcan
+
     <li class="nav-item    has-treeview  {{ request()->is('settings*') ? 'menu-open' : '' }}">
         <a href="#" class="nav-link  ">
             <i class="nav-icon text-yellow fas fa fa-database"></i>

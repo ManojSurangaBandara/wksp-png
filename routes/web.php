@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SlemeBattalionController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkshopController;
 use App\Http\Controllers\WorkshopTypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/profile', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('update-password');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
+    Route::resource('workshop', WorkshopController::class);
     Route::prefix('settings')->group(function () {
         Route::resource('regiment', RegimentController::class);
         Route::resource('unit', UnitController::class);
