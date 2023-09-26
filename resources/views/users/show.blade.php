@@ -51,6 +51,12 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label class="col-sm-3" for="workshop">Workshop</label>
+                        <div class="col-sm-9">
+                            <span>{{$user->workshop->name}}</span>
+                        </div>
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-sm-3" for="active">Role</label>

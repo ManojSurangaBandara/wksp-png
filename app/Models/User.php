@@ -11,7 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable , HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +24,8 @@ class User extends Authenticatable
         'username',
         'password',
         'regi_id',
-        'unit_id'
+        'unit_id',
+        'workshop_id',
     ];
 
     /**
@@ -50,8 +51,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(Regiment::class, 'id', 'regi_id');
     }
+
     public function unit()
     {
         return $this->hasOne(Unit::class, 'id', 'unit_id');
+    }
+
+    public function workshop()
+    {
+        return $this->hasOne(Workshop::class, 'id', 'workshop_id');
     }
 }

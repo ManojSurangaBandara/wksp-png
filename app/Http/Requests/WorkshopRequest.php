@@ -27,6 +27,7 @@ class WorkshopRequest extends FormRequest
             'name' => 'required',
             'type_id' => 'required',
             'battalion_id' => 'required',
+            'workshop_id' => 'required',
         ];
     }
 }

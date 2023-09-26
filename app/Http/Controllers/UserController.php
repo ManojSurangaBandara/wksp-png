@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Regiment;
 use App\Models\Unit;
 use App\Models\User;
+use App\Models\Workshop;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\DataTables\UsersDataTable;
@@ -70,8 +71,9 @@ class UserController extends Controller
     {
         $regiments = Regiment::all();
         $units = Unit::all();
+        $workshops = Workshop::all();
         $roles = Role::pluck('name', 'name')->all();
-        return view('users.create', compact('roles','regiments','units'));
+        return view('users.create', compact('roles', 'regiments', 'units', 'workshops'));
     }
 
     /**
@@ -114,8 +116,9 @@ class UserController extends Controller
     {
         $regiments = Regiment::all();
         $units = Unit::all();
+        $workshops = Workshop::all();
         $roles = Role::pluck('name', 'name')->all();
-        return view('users.edit', compact('user', 'roles','regiments','units'));
+        return view('users.edit', compact('user', 'roles', 'regiments', 'units', 'workshops'));
     }
 
     /**

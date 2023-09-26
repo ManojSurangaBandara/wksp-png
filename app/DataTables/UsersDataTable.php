@@ -46,7 +46,7 @@ class UsersDataTable extends DataTable
      */
     public function query(User $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('workshop');
     }
 
     /**
@@ -84,6 +84,7 @@ class UsersDataTable extends DataTable
             Column::make('name')->title("Name"),
             Column::make('email')->title("Email"),
             Column::computed('roles')->title("Roles"),
+            Column::computed('workshop.name')->title("Workshop"),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
