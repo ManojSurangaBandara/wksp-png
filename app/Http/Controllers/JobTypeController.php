@@ -62,9 +62,9 @@ class JobTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(JobType $workshopType)
+    public function destroy(JobType $jobType)
     {
-        $workshopType->delete();
+        $jobType->delete();
         return redirect()->route('jobType.index')
             ->with('message', 'Job Type deleted successfully');
     }

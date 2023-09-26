@@ -154,6 +154,19 @@
             </ul>
         @endcan
 
+        @can('supplier-detail-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('supplierDetail.index') }}"
+                       class="nav-link {{  request()->is('settings/supplierDetail*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Supplier Detail </p>
+                    </a>
+                </li>
+            </ul>
+        @endcan
+
         @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">

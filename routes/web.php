@@ -7,6 +7,7 @@ use App\Http\Controllers\RegimentController;
 use App\Http\Controllers\RepairTypeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SlemeBattalionController;
+use App\Http\Controllers\SupplierDetailController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkshopController;
@@ -47,6 +48,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('repairType', RepairTypeController::class);
         Route::resource('slemeBattalion', SlemeBattalionController::class);
         Route::resource('natureOfRepair', NatureOfRepairController::class);
+        Route::resource('supplierDetail', SupplierDetailController::class);
     });
 
     Route::get('/ajax/getUnit', [ajaxController::class, 'getUnit'])->name('ajax.getUnit');
