@@ -167,6 +167,19 @@
             </ul>
         @endcan
 
+        @can('service_check_list-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('serviceCheckList.index') }}"
+                       class="nav-link {{  request()->is('settings/serviceCheckList*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Service Check List </p>
+                    </a>
+                </li>
+            </ul>
+        @endcan
+
         @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
