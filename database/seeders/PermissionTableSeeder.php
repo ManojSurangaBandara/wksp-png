@@ -28,13 +28,14 @@ class PermissionTableSeeder extends Seeder
             'regiment-management',
             'unit-management',
             'workshop-type-management',
-            'workshop-management',
+            'workshop-module-management',
             'job-type-management',
             'repair-type-management',
             'sleme-battalion-management',
             'nature-of-repair-management',
             'supplier-detail-management',
             'service_check_list-management',
+            'repair-module-management',
         ];
 
         foreach ($permissions as $permission) {

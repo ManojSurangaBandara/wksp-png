@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>New District </h1>
+                        <h1>New Role </h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -75,6 +75,26 @@
                                         @endif
                                     @endforeach
                                 </div>
+                                <div class="row mb-2 text-maroon"><label>Workshop Management Module</label></div>
+                                <div>
+                                    @foreach($permission as $value)
+                                        @if($value->name == 'workshop-module-management')
+                                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                                                {{ $value->name }}</label>
+                                            <br/>
+                                        @endif
+                                    @endforeach
+                                </div>
+                                <div class="row mb-2 text-maroon"><label>Repair Management Module</label></div>
+                                <div>
+                                    @foreach($permission as $value)
+                                        @if($value->name == 'repair-module-management')
+                                            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                                                {{ $value->name }}</label>
+                                            <br/>
+                                        @endif
+                                    @endforeach
+                                </div>
 
                                 <div class="row mb-2 text-maroon"><label>Reports Management Module</label></div>
                                 <div>
@@ -89,7 +109,7 @@
                                 <div class="row mb-2 text-maroon"><label>Master Data Module</label></div>
                                 <div>
                                     @foreach($permission as $value)
-                                        @if($value->name == 'regiment-management')
+                                        @if($value->name == 'regiment-management' || $value->name == 'unit-management' || $value->name == 'unit-management' || $value->name == 'workshop-type-management' || $value->name == 'job-type-management' || $value->name == 'repair-type-management' || $value->name == 'sleme-battalion-management' || $value->name == 'nature-of-repair-management' || $value->name == 'service_check_list-management' )
                                             <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
                                                 {{ $value->name }}</label>
                                             <br/>

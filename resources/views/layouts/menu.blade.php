@@ -11,6 +11,68 @@
     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
 @else
 
+    @can('workshop-module-management')
+        <li class="nav-item    has-treeview  {{ request()->is('workshop*')  ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link  ">
+                <i class="nav-icon text-blue fas fa fa-warehouse"></i>
+                <p>Workshop Management Module</p>
+            </a>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('workshop.create') }}"
+                       class="nav-link {{  request()->is('workshop/create') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-blue"></i>
+                        <p>Add Workshop </p>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('workshop.index') }}"
+                       class="nav-link {{  request()->is('workshop') ? 'active' : '' }}  ">
+                        <i class="far fa-circle nav-icon text-blue"></i>
+                        <p>Workshops </p>
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+    @endcan
+
+    @can('repair-module-management')
+        <li class="nav-item    has-treeview  {{ request()->is('workshop*')  ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link  ">
+                <i class="nav-icon text-green fas fa fa-warehouse"></i>
+                <p>Repair Management Module</p>
+            </a>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('workshop.create') }}"
+                       class="nav-link {{  request()->is('workshop/create') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-green"></i>
+                        <p>Workshop Indent(G7) </p>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('workshop.index') }}"
+                       class="nav-link {{  request()->is('workshop') ? 'active' : '' }}  ">
+                        <i class="far fa-circle nav-icon text-green"></i>
+                        <p>Job Card </p>
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+    @endcan
+
     <li class="nav-item    has-treeview  {{ request()->is('users*') || request()->is('roles*') || request()->is('profile*') ? 'menu-open' : '' }}">
         <a href="#" class="nav-link  ">
             <i class="nav-icon text-red fas fa fa-user"></i>
@@ -51,37 +113,6 @@
             </li>
         </ul>
     </li>
-
-    @can('workshop-management')
-        <li class="nav-item    has-treeview  {{ request()->is('workshop*')  ? 'menu-open' : '' }}">
-            <a href="#" class="nav-link  ">
-                <i class="nav-icon text-blue fas fa fa-warehouse"></i>
-                <p>Workshop Management Module</p>
-            </a>
-
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{ route('workshop.create') }}"
-                       class="nav-link {{  request()->is('workshop/create') ? 'active' : '' }}  ">
-                        <i
-                            class="far fa-circle nav-icon text-blue"></i>
-                        <p>Add Workshop </p>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{ route('workshop.index') }}"
-                       class="nav-link {{  request()->is('workshop') ? 'active' : '' }}  ">
-                        <i class="far fa-circle nav-icon text-blue"></i>
-                        <p>Workshops </p>
-                    </a>
-                </li>
-            </ul>
-
-        </li>
-    @endcan
 
     <li class="nav-item    has-treeview  {{ request()->is('settings*') ? 'menu-open' : '' }}">
         <a href="#" class="nav-link  ">
