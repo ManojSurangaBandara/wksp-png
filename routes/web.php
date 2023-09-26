@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ajaxController;
+use App\Http\Controllers\G7Controller;
 use App\Http\Controllers\JobTypeController;
 use App\Http\Controllers\NatureOfRepairController;
 use App\Http\Controllers\RegimentController;
@@ -41,6 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('workshop', WorkshopController::class);
+    Route::resource('g7', G7Controller::class);
     Route::prefix('settings')->group(function () {
         Route::resource('regiment', RegimentController::class);
         Route::resource('unit', UnitController::class);
