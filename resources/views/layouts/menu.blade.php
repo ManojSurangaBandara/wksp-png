@@ -45,7 +45,7 @@
     @can('repair-module-management')
         <li class="nav-item    has-treeview  {{ request()->is('workshop*')  ? 'menu-open' : '' }}">
             <a href="#" class="nav-link  ">
-                <i class="nav-icon text-green fas fa fa-warehouse"></i>
+                <i class="nav-icon text-green fas fa fa-wrench"></i>
                 <p>Repair Management Module</p>
             </a>
 
