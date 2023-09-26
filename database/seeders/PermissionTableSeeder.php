@@ -32,6 +32,7 @@ class PermissionTableSeeder extends Seeder
             'job-type-management',
             'repair-type-management',
             'sleme-battalion-management',
+            'nature-of-repair-management',
         ];
 
         foreach ($permissions as $permission) {

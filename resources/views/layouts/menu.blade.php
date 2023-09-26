@@ -141,6 +141,19 @@
             </ul>
         @endcan
 
+        @can('nature-of-repair-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('natureOfRepair.index') }}"
+                       class="nav-link {{  request()->is('settings/natureOfRepair*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Nature Of Repair </p>
+                    </a>
+                </li>
+            </ul>
+        @endcan
+
         @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
