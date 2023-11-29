@@ -55,9 +55,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://localhost/wksp-mgt-system/'),
-    'asset_url' => env('ASSET_URL', 'https://localhost/wksp-mgt-system/public/'),
-    'mix_url' => env('MIX_URL', 'https://localhost/wksp-mgt-system/public/'),
+    'url' => env('APP_URL', 'http://localhost/wksp-mgt-system/'),
+    'asset_url' => env('ASSET_URL', 'http://localhost/wksp-mgt-system/public/'),
+    'mix_url' => env('MIX_URL', 'http://localhost/wksp-mgt-system/public/'),
 
     /*
     |--------------------------------------------------------------------------

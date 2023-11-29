@@ -63,7 +63,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label class="col-sm-3" for="type_id">Workshop type</label>
                             <div class="col-sm-9">
@@ -82,7 +81,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label class="col-sm-3" for="battalion_id">SLEME Battalion</label>
                             <div class="col-sm-9">

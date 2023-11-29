@@ -3,7 +3,7 @@
         <img src="{{ asset('images/Sri_Lanka_Army_Logo.png') }}"
              alt="Army logo"
              class="brand-image img-circle elevation-3">
-        <span class="brand-text font-weight-light">WKSP MGT System</span>
+        <span class="brand-text font-weight-light">Workshop Management System</span>
     </a>
 
     <div class="sidebar text-sm">

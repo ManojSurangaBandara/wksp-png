@@ -80,6 +80,7 @@ class WorkshopDataTable extends DataTable
             Column::make('DT_RowIndex')->title('#')->searchable(false)->orderable(false),
             Column::make('name')->title("Name"),
             Column::make('type.name')->title("Workshop type"),
+            Column::make('location')->title("Location"),
             Column::make('battalion.name')->title("SLEME Battalion"),
             Column::computed('action')
                 ->exportable(false)

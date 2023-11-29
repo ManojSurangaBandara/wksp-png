@@ -88,13 +88,17 @@
                                 <div class="row mb-2 text-maroon"><label>Repair Management Module</label></div>
                                 <div>
                                     @foreach($permission as $value)
-                                        @if($value->name == 'repair-module-management')
+                                        @if($value->name == 'repair-module-management' || $value->name == 'workshop-indent-management'|| $value->name == 'job-card-management'|| $value->name == 'demand-management')
                                             <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
                                                 {{ $value->name }}</label>
                                             <br/>
                                         @endif
                                     @endforeach
                                 </div>
+
+
+
+
 
                                 <div class="row mb-2 text-maroon"><label>Reports Management Module</label></div>
                                 <div>

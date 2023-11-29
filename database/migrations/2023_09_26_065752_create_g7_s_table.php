@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('g7_s', function (Blueprint $table) {
             $table->id();
+            $table->string('job_id');
+            $table->string('army_no');
+            $table->string('repair_type');
+            $table->string('job_type');
+            $table->string('vehicle_value');
+            $table->string('organization');
+            $table->string('reg_date');
+            $table->string('nature_service');
+            $table->string('live_search_result_in_charge');
             $table->timestamps();
+
         });
     }
 

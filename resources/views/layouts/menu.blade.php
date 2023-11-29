@@ -6,16 +6,16 @@
     </a>
 </li>
 
-@guest
+
     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-@else
 
-    @can('workshop-module-management')
+
+
         <li class="nav-item    has-treeview  {{ request()->is('workshop*')  ? 'menu-open' : '' }}">
             <a href="#" class="nav-link  ">
                 <i class="nav-icon text-blue fas fa fa-warehouse"></i>
-                <p>Workshop Management Module</p>
+                <p>Workshop Management</p>
             </a>
 
             <ul class="nav nav-treeview">
@@ -40,15 +40,12 @@
             </ul>
 
         </li>
-    @endcan
 
-    @can('repair-module-management')
-        <li class="nav-item    has-treeview  {{ request()->is('workshop*')  ? 'menu-open' : '' }}">
+        <li class="nav-item    has-treeview  {{ request()->is('repair*')  ? 'menu-open' : '' }}">
             <a href="#" class="nav-link  ">
                 <i class="nav-icon text-green fas fa fa-wrench"></i>
-                <p>Repair Management Module</p>
+                <p>Repair Management</p>
             </a>
-
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('g7.index') }}"
@@ -59,26 +56,86 @@
                     </a>
                 </li>
             </ul>
-
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('workshop.index') }}"
-                       class="nav-link {{  request()->is('workshop') ? 'active' : '' }}  ">
+                    <a href="{{ route('jobCard.index') }}"
+                       class="nav-link {{  request()->is('jobCard') ? 'active' : '' }}  ">
                         <i class="far fa-circle nav-icon text-green"></i>
-                        <p>Job Card </p>
+                        <p>Job Card(G26)</p>
                     </a>
                 </li>
             </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('technicalDetail.index') }}"
+                       class="nav-link {{  request()->is('technicalDetail') ? 'active' : '' }}  ">
+                        <i class="far fa-circle nav-icon text-green"></i>
+                        <p>Technical Details</p>
+                    </a>
+                </li>
+            </ul>            
+            
+            
+   
 
+        <li class="nav-item    has-treeview  {{ request()->is('service*')  ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link  ">
+                <i class="nav-icon text-orange fas fa fa-bus"></i>
+                <p>Service Management</p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('service.index') }}"
+                       class="nav-link {{  request()->is('service') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-orange"></i>
+                        <p>Vehicle Services</p>
+                    </a>
+                </li>
+            </ul>
         </li>
-    @endcan
+
+        <li class="nav-item    has-treeview  {{ request()->is('modification*')  ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link  ">
+                <i class="nav-icon text-purple fas fa fa-space-shuttle"></i>
+                <p>Modification Management</p>
+            </a>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('g7.index') }}"
+                       class="nav-link {{  request()->is('g7') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-purple"></i>
+                        <p>Vehicle Modification</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item    has-treeview  {{ request()->is('inventry*')  ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link  ">
+                <i class="nav-icon text-green fas fa fa-car"></i>
+                <p>Inventry Management</p>
+            </a>
+
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('sparePart.index') }}"
+                       class="nav-link {{  request()->is('sparePart') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Spare Parts Details</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
     <li class="nav-item    has-treeview  {{ request()->is('users*') || request()->is('roles*') || request()->is('profile*') ? 'menu-open' : '' }}">
         <a href="#" class="nav-link  ">
             <i class="nav-icon text-red fas fa fa-user"></i>
-            <p>User Management Module</p>
+            <p>User Management</p>
         </a>
-        @can('user-management')
+
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('users.index') }}"
@@ -89,8 +146,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
-        @can('role-management')
+
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('roles.index') }}"
@@ -101,7 +157,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
+
         <ul class="nav nav-treeview">
             <li class="nav-item">
                 <a href="{{ route('profile') }}"
@@ -117,23 +173,21 @@
     <li class="nav-item    has-treeview  {{ request()->is('settings*') ? 'menu-open' : '' }}">
         <a href="#" class="nav-link  ">
             <i class="nav-icon text-yellow fas fa fa-database"></i>
-            <p>Master Data Module</p>
+            <p>Master Data</p>
         </a>
 
-        @can('workshop-type-management')
+        
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('workshopType.index') }}"
                        class="nav-link {{  request()->is('settings/workshopType*') ? 'active' : '' }}  ">
                         <i
                             class="far fa-circle nav-icon text-yellow"></i>
-                        <p>Workshop Type </p>
+                        <p>Workshop Type</p>
                     </a>
                 </li>
             </ul>
-        @endcan
-
-        @can('sleme-battalion-management')
+        
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('slemeBattalion.index') }}"
@@ -144,9 +198,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
-
-        @can('job-type-management')
+        
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('jobType.index') }}"
@@ -157,9 +209,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
 
-        @can('repair-type-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('repairType.index') }}"
@@ -170,9 +220,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
 
-        @can('nature-of-repair-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('natureOfRepair.index') }}"
@@ -183,9 +231,38 @@
                     </a>
                 </li>
             </ul>
-        @endcan
 
-        @can('supplier-detail-management')
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('vehicleMcategory.index') }}"
+                       class="nav-link {{  request()->is('settings/vehicleMcategory*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Vehicle Parts Main Category</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('vehicleScategory.index') }}"
+                       class="nav-link {{  request()->is('settings/vehicleScategory*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Vehicle Parts Sub Category</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('vehicleTcategory.index') }}"
+                       class="nav-link {{  request()->is('settings/vehicleTcategory*') ? 'active' : '' }}  ">
+                        <i
+                            class="far fa-circle nav-icon text-yellow"></i>
+                        <p>Vehicle Parts Third Category</p>
+                    </a>
+                </li>
+            </ul>
+
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('supplierDetail.index') }}"
@@ -196,9 +273,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
 
-        @can('service_check_list-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('serviceCheckList.index') }}"
@@ -209,9 +284,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
 
-        @can('regiment-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('regiment.index') }}"
@@ -222,9 +295,7 @@
                     </a>
                 </li>
             </ul>
-        @endcan
 
-        @can('unit-management')
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{ route('unit.index') }}"
@@ -235,6 +306,6 @@
                     </a>
                 </li>
             </ul>
-        @endcan
+        
     </li>
-@endguest
+

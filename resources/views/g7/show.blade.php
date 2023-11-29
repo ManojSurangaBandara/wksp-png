@@ -29,11 +29,59 @@
                     </div>
                 </div>
                 <div class="card-body">
+                <div class="form-group row">
+                        <label class="col-sm-3" for="army_no">Job Referance No:</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->job_id}}</span>
+                        </div>
+                    </div>
+                <div class="form-group row">
+                        <label class="col-sm-3" for="army_no">Repair Type:</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->repair_type}}</span>
+                        </div>
+                </div>
+                <div class="form-group row">
+                        <label class="col-sm-3" for="army_no">Job Type:</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->job_type}}</span>
+                        </div>
+                </div>
+                <div class="form-group row">
+                        <label class="col-sm-3" for="army_no">Vehicle Number:</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->army_no}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3" for="organization">Vehicle Authority:</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->organization}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3" for="title_name">Registered Date</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->reg_date}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3" for="vehicle_value">Vehicle Value:</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->vehicle_value}}</span>
+                        </div>
+                    </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-3" for="name">Name</label>
+                        <label class="col-sm-3" for="live_search_result_in_charge">Vehicle Responsible Officer:</label>
                         <div class="col-sm-9">
-                            <span>{{$g7->name}}</span>
+                            <span>{{$g7->live_search_result_in_charge}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3" for="nature_service">Nature of Service:</label>
+                        <div class="col-sm-9">
+                            <span>{{$g7->nature_service}}</span>
                         </div>
                     </div>
 

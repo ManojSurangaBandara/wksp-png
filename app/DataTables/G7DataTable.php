@@ -78,7 +78,15 @@ class G7DataTable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')->title('#')->searchable(false)->orderable(false),
-            Column::make('name')->title("Name"),
+            Column::make('job_id')->title("Job Referance No"),
+            Column::make('reg_date')->title("Registered Date"),
+            Column::make('army_no')->title("Vehicle Number"),
+            Column::make('organization')->title("Vehicle Authority"),
+            //Column::make('repair_type')->title("Repair Type"),
+            //Column::make('job_type')->title("Job Type"),
+            Column::make('nature_service')->title("Nature of Service"),
+            
+
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

@@ -36,6 +36,10 @@ class PermissionTableSeeder extends Seeder
             'supplier-detail-management',
             'service_check_list-management',
             'repair-module-management',
+            'workshop-indent-management',
+            'job-card-module-management',
+            'service-module-management',
+
         ];
 
         foreach ($permissions as $permission) {
